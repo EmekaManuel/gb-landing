@@ -1,8 +1,8 @@
 "use client";
-import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
-import SvgLogo from "./svgLogo";
+import { useEffect, useState } from "react";
 
 // Usage
 
@@ -46,8 +46,17 @@ const Navigation = () => {
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <div className="flex-shrink-0 ">
-              <Link href="/" className="text-xl font-semibold  text-gray-900">
-                {/* <SvgLogo /> */}globalpay
+              <Link href="/" className="main-logo flex items-center shrink-0">
+                <Image
+                  className="w-8 ltr:-ml-1 rtl:-mr-1 inline"
+                  src="/gb/logo.png"
+                  width={8}
+                  height={8}
+                  alt="logo"
+                />
+                <span className="text-2xl ltr:ml-1.5 rtl:mr-1.5  font-mono  align-middle hidden md:inline dark:text-white-light transition-all duration-300">
+                  globalpay
+                </span>
               </Link>
             </div>
 

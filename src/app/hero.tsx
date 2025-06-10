@@ -11,168 +11,167 @@ import React from "react";
 
 export const HeroSection = () => {
   return (
-    <section className="relative h-full flex items-center overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0">
-        <Image src="/gb/bg-1.jpg" alt="GlobalPay Background" fill priority />
-        {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black/60"></div>
-      </div>
-
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center min-h-[80vh]">
-          {/* Left Side - Main Headline */}
-          <div className="lg:col-span-7 space-y-8">
+    <section className="min-h-screen bg-white flex flex-col justify-center px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto text-center space-y-16">
+        {/* Header Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="space-y-8"
+        >
+          {/* Brand */}
+          <div className="space-y-4">
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+              className="text-md uppercase tracking-[0.3em] text-green-600 font-medium"
             >
-              <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-[0.9] tracking-tight">
-                <div className="text-green-500 flex items-center gap-3 tracking-wider font-semibold  pb-3 text-[30px] mb-2">
-                  <div className="w-12 h-0.5 bg-green-500"></div>
-                  globalpay
-                </div>
-                <div className="text-white mb-2">FINANCIAL INCLUSION</div>
-                <div className="flex items-baseline flex-wrap gap-3">
-                  <span className="text-white/40 text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
-                    WITH
-                  </span>
-                  <span className="text-green-500 text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
-                    PURPOSE
-                  </span>
-                </div>
-              </h1>
+              GlobalPay
             </motion.div>
 
-            {/* App Download Buttons */}
-            <motion.div
+            {/* Main Headline */}
+            <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="flex flex-col sm:flex-row gap-4"
+              transition={{ delay: 0.4, duration: 0.8 }}
+              className="text-4xl md:text-6xl lg:text-7xl font-light leading-[1.1] tracking-tight text-black"
             >
-              <motion.button
-                className="flex items-center justify-center bg-white/10 backdrop-blur-sm border border-white/20 text-white px-6 py-3 rounded-xl hover:bg-white/20 transition-all duration-300"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <div className="flex items-center space-x-3">
-                  <Smartphone className="w-6 h-6" />
-                  <div className="text-left">
-                    <div className="text-xs text-gray-300">Download on the</div>
-                    <div className="text-sm font-semibold">App Store</div>
-                  </div>
-                </div>
-              </motion.button>
-
-              <motion.button
-                className="flex items-center justify-center bg-white/10 backdrop-blur-sm border border-white/20 text-white px-6 py-3 rounded-xl hover:bg-white/20 transition-all duration-300"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <div className="flex items-center space-x-3">
-                  <Download className="w-6 h-6" />
-                  <div className="text-left">
-                    <div className="text-xs text-gray-300">Get it on</div>
-                    <div className="text-sm font-semibold">Google Play</div>
-                  </div>
-                </div>
-              </motion.button>
-            </motion.div>
+              Financial Inclusion
+              <br />
+              <span className="font-normal text-green-600">with Purpose</span>
+            </motion.h1>
           </div>
 
-          {/* Right Side - Description and CTA */}
-          <div className="lg:col-span-5 space-y-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="space-y-6"
-            >
-              <p className="text-lg md:text-xl text-gray-200 leading-relaxed">
-                Transform your financial journey with GlobalPay&apos;s
-                cutting-edge payment solutions. We specialize in agency banking,
-                digital payments, and fintech services that drive financial
-                inclusion across Nigeria and beyond.
-              </p>
+          {/* Description */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.8 }}
+            className="max-w-2xl mx-auto space-y-6"
+          >
+            <p className="text-lg md:text-xl text-gray-600 leading-relaxed font-light">
+              Transform your financial journey with GlobalPay&#39;s cutting-edge
+              payment solutions. We specialize in agency banking, digital
+              payments, and fintech services that drive financial inclusion
+              across Nigeria and beyond.
+            </p>
 
-              <p className="text-lg md:text-xl text-gray-200 leading-relaxed">
-                Join thousands of satisfied customers who trust GlobalPay to
-                achieve their financial goals without barriers or boundaries.
-              </p>
-            </motion.div>
+            <p className="text-lg md:text-xl text-gray-600 leading-relaxed font-light">
+              Join thousands of satisfied customers who trust GlobalPay to
+              achieve their financial goals without barriers or boundaries.
+            </p>
+          </motion.div>
+        </motion.div>
 
-            {/* Get Started Button */}
+        {/* App Download Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.8, duration: 0.8 }}
+          className="space-y-8"
+        >
+          <div className="text-sm uppercase tracking-[0.2em] text-gray-400 font-medium">
+            Download Our App
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto">
             <motion.button
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="group bg-green-500 text-white px-8 py-3 rounded-xl font-semibold text-lg shadow-2xl hover:bg-green-600 hover:shadow-green-500/25 transition-all duration-300"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              className="group flex items-center justify-center border border-gray-200 text-black px-8 py-4 hover:bg-green-500 hover:text-white hover:border-green-500 transition-all duration-300"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
             >
               <div className="flex items-center space-x-3">
-                <span>Become an Agent</span>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <Smartphone className="w-5 h-5" />
+                <div className="text-left">
+                  <div className="text-xs text-gray-500 group-hover:text-gray-300">
+                    Download on the
+                  </div>
+                  <div className="text-sm font-medium">App Store</div>
+                </div>
+              </div>
+            </motion.button>
+
+            <motion.button
+              className="group flex items-center justify-center border border-gray-200 text-black px-8 py-4 hover:bg-green-500 hover:text-white hover:border-green-500 transition-all duration-300"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <div className="flex items-center space-x-3">
+                <Download className="w-5 h-5" />
+                <div className="text-left">
+                  <div className="text-xs text-gray-500 group-hover:text-gray-300">
+                    Get it on
+                  </div>
+                  <div className="text-sm font-medium">Google Play</div>
+                </div>
               </div>
             </motion.button>
           </div>
-        </div>
+        </motion.div>
 
-        {/* Bottom Stats */}
+        {/* CTA Section */}
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className=" border-t border-white/10"
+          transition={{ delay: 1, duration: 0.8 }}
+          className="space-y-8"
         >
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div className="space-y-2">
-              <div className="text-4xl font-black text-green-500">200+</div>
-              <div className="text-gray-400 text-sm uppercase tracking-widest font-medium">
-                Locations{" "}
-              </div>
+          <motion.button
+            className="group bg-orange-500 text-white px-12 py-4 hover:bg-orange-600 transition-all duration-300 border-0"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            <div className="flex items-center space-x-3">
+              <span className="text-lg font-normal">Become an Agent</span>
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
             </div>
+          </motion.button>
+        </motion.div>
 
-            <div className="space-y-2">
-              <div className="text-4xl font-black text-green-500">₦2B+</div>
-              <div className="text-gray-400 text-sm uppercase tracking-widest font-medium">
-                Transactions Processed
-              </div>
-            </div>
-
-            <div className="space-y-2">
-              <div className="text-4xl font-black text-green-500">99%</div>
-              <div className="text-gray-400 text-sm uppercase tracking-widest font-medium">
-                Customer Support
-              </div>
-            </div>
+        {/* Stats Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.2, duration: 0.8 }}
+          className="pt-16 border-t border-gray-100"
+        >
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-3xl mx-auto">
+            {[
+              { value: "200+", label: "Locations" },
+              { value: "₦2B+", label: "Transactions Processed" },
+              { value: "99%", label: "Customer Support" },
+            ].map((stat, index) => (
+              <motion.div
+                key={index}
+                className="text-center space-y-2"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.4 + index * 0.1, duration: 0.6 }}
+              >
+                <div className="text-3xl md:text-4xl font-light text-orange-500">
+                  {stat.value}
+                </div>
+                <div className="text-sm text-gray-500 uppercase tracking-wider font-medium">
+                  {stat.label}
+                </div>
+              </motion.div>
+            ))}
           </div>
         </motion.div>
+
+        <motion.div
+          initial={{ width: 0 }}
+          animate={{ width: "100px" }}
+          transition={{ delay: 1.8, duration: 1, ease: "easeOut" }}
+          className="h-px bg-green-400 mx-auto"
+        />
       </div>
-
-      {/* Subtle accent elements */}
-      <motion.div
-        className="absolute top-20 right-20 w-4 h-4 bg-green-500/60 rounded-full"
-        animate={{
-          scale: [1, 1.5, 1],
-          opacity: [0.6, 1, 0.6],
-        }}
-        transition={{ duration: 4, repeat: Infinity }}
-      />
-
-      <motion.div
-        className="absolute bottom-32 left-20 w-3 h-3 bg-green-500/40 rounded-full"
-        animate={{
-          y: [0, -20, 0],
-          opacity: [0.4, 0.8, 0.4],
-        }}
-        transition={{ duration: 5, repeat: Infinity }}
-      />
     </section>
   );
 };
+
 export const AboutUsSection = () => {
   return (
     <section className="py-16 lg:py-24 min-h-screen overflow-hidden items-center flex bg-white">
