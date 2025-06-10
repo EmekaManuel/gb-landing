@@ -199,7 +199,7 @@ export const AboutUsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               viewport={{ once: true }}
-              className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 leading-tight"
+              className="text-4xl md:text-6xl lg:text-6xl font-light leading-[1.1] tracking-tight text-black"
             >
               Making Financial Opportunities{" "}
               <span className="text-green-500">Accessible To Everyone</span>
@@ -309,7 +309,7 @@ export const TrustedBySection = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl md:text-6xl lg:text-6xl font-light leading-[1.1] tracking-tight text-black">
             Trusted by <span className="text-green-500">Leading Companies</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -449,7 +449,7 @@ export const WhatWeDoSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               viewport={{ once: true }}
-              className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 leading-tight"
+              className="text-4xl md:text-6xl lg:text-6xl font-light leading-[1.1] tracking-tight text-black"
             >
               Financial services we provide{" "}
               <span className="text-green-500">for everyone</span>
