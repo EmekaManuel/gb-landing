@@ -33,7 +33,6 @@ export const HeroSection = () => {
   const vantaEffect = useRef<{ destroy: () => void } | null>(null);
 
   useEffect(() => {
-    // Initialize Vanta effect when scripts are loaded
     const initVanta = () => {
       if (typeof window !== "undefined" && window.VANTA && vantaRef.current) {
         vantaEffect.current = window.VANTA.NET({
@@ -70,7 +69,6 @@ export const HeroSection = () => {
       return () => clearInterval(checkVanta);
     }
 
-    // Cleanup function
     return () => {
       if (vantaEffect.current) {
         vantaEffect.current.destroy();
