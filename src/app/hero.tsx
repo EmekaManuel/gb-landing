@@ -90,7 +90,7 @@ export const HeroSection = () => {
 
       <section
         ref={vantaRef}
-        className="min-h-screen bg-black flex flex-col justify-center px-4 sm:px-6 lg:px-8 relative"
+        className="min-h-screen pt-6 bg-black flex flex-col justify-center px-4 sm:px-6 lg:px-8 relative"
       >
         {/* Dark overlay for better text readability */}
         <div className="absolute inset-0 bg-black/30 z-10"></div>
