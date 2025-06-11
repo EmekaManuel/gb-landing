@@ -74,7 +74,7 @@ const Navigation = () => {
 
                 {/* Donate Button */}
                 <a
-                  href="/donate"
+                  href="/get-started"
                   className="bg-gray-900 text-white px-6 py-2 rounded-md text-sm font-medium hover:bg-gray-800 transition-colors duration-200"
                 >
                   Get Started
@@ -132,7 +132,7 @@ const Navigation = () => {
               {/* Mobile Donate Button */}
               <div className="pt-4 pb-2">
                 <a
-                  href="/donate"
+                  href="/get-started"
                   className={`bg-gray-900 text-white block text-center px-6 py-3 rounded-md text-base font-medium mx-3 hover:bg-gray-800 transition-all duration-200 shadow-md transform ${
                     isOpen
                       ? "translate-x-0 opacity-100"
