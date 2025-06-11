@@ -143,7 +143,7 @@ const Navigation = () => {
                   }}
                   onClick={() => setIsOpen(false)}
                 >
-                  Donate
+                  Get Started
                 </a>
               </div>
             </div>
