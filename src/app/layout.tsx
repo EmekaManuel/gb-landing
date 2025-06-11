@@ -32,12 +32,36 @@ export const metadata: Metadata = {
       "More than a payment company. We believe everyone should be able to enjoy financial and social inclusion, without regard for physical borders, boundaries, or even social status.",
     type: "website",
     siteName: "GlobalPay",
+    images: [
+      {
+        url: "/gb/og.png", // Path to your image in the public folder
+        width: 1200,
+        height: 630,
+        alt: "GlobalPay - Financial Inclusion for Everyone",
+        type: "image/png",
+      },
+      {
+        url: "/gb/og.png", // Square version for some platforms
+        width: 1200,
+        height: 1200,
+        alt: "GlobalPay - Financial Inclusion for Everyone",
+        type: "image/png",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "GlobalPay - Financial Inclusion for Everyone",
     description:
       "More than a payment company. We believe everyone should be able to enjoy financial and social inclusion, without regard for physical borders, boundaries, or even social status.",
+    images: [
+      {
+        url: "/gb/og.png", // Same image or Twitter-specific version
+        width: 1200,
+        height: 630,
+        alt: "GlobalPay - Financial Inclusion for Everyone",
+      },
+    ],
   },
   keywords: [
     "globalpay",
