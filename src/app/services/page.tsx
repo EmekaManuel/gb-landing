@@ -1,14 +1,13 @@
 import React from "react";
-import { WhatWeDoSection } from ".";
+import { GlobalPayServicesSection } from ".";
 import Navigation from "@/components/inavbar";
-import { EventsNewsletterSection, ProjectsSection } from "../hero";
+import { EventsNewsletterSection } from "../hero";
 
 const page = () => {
   return (
     <>
       <Navigation />
-      <WhatWeDoSection showFullDetails={false} />
-      <ProjectsSection />
+      <GlobalPayServicesSection />
       <EventsNewsletterSection />
     </>
   );
