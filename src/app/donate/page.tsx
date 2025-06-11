@@ -1,14 +1,12 @@
-import React from "react";
-import { DonationHero, DonationInfo } from ".";
 import Navigation from "@/components/inavbar";
+import { GetStartedPage } from ".";
 import { EventsNewsletterSection } from "../hero";
 
 const page = () => {
   return (
     <>
       <Navigation />
-      <DonationHero />
-      <DonationInfo />
+      <GetStartedPage />
       <EventsNewsletterSection />
     </>
   );

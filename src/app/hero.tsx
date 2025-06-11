@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 import { CreditCard, Mail, MapPin, Phone } from "lucide-react";
+import { Quote, Star } from "lucide-react";
+
 import Image from "next/image";
 import { useState } from "react";
 
@@ -9,8 +11,8 @@ import {
   ArrowRight,
   Code,
   Download,
-  Smartphone,
   Globe,
+  Smartphone,
   Target,
   TrendingUp,
   Users,
@@ -147,7 +149,7 @@ export const HeroSection = () => {
         >
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-3xl mx-auto">
             {[
-              { value: "200+", label: "Locations" },
+              { value: "200+", label: "Locations Nationwide" },
               { value: "₦2B+", label: "Transactions Processed" },
               { value: "99%", label: "Customer Support" },
             ].map((stat, index) => (
@@ -428,6 +430,41 @@ export const TrustedBySection = () => {
 
   const duplicatedIndustries = [...industries, ...industries];
 
+  const testimonials = [
+    {
+      name: "Sarah Adebayo",
+      position: "Operations Manager",
+      company: "Chicken Republic",
+      image: "/gb/testimonials/sarah.jpg",
+      rating: 5,
+      quote:
+        "GlobalPay has revolutionized our payment processing across all locations. The seamless integration and reliable settlements have significantly improved our cash flow management.",
+      industry: "Food & Beverage",
+    },
+
+    {
+      name: "Aisha Mahmoud",
+      position: "Branch Manager",
+      company: "Unity Bank",
+      image: "/gb/testimonials/aisha.jpg",
+      rating: 5,
+      quote:
+        "As a financial institution, we needed a reliable partner for our agent banking network. GlobalPay's infrastructure and support have exceeded our expectations.",
+      industry: "Banking",
+    },
+
+    {
+      name: "Emeka Nnaji",
+      position: "Regional Director",
+      company: "Mobil Nigeria",
+      image: "/gb/testimonials/emeka.jpg",
+      rating: 5,
+      quote:
+        "Handling high-volume transactions across our network requires reliability. GlobalPay delivers consistent performance and exceptional uptime for our fuel stations.",
+      industry: "Energy",
+    },
+  ];
+
   return (
     <section className="py-16 bg-white border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -462,7 +499,7 @@ export const TrustedBySection = () => {
             {duplicatedIndustries.map((industry, index) => (
               <motion.div
                 key={`row1-${index}`}
-                className="flex-shrink-0 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 p-6 min-w-[200px]"
+                className="flex-shrink-0 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 p-6 min-w-[200px] border border-gray-100"
                 whileHover={{ scale: 1.05 }}
               >
                 <div className="flex items-center space-x-4">
@@ -483,34 +520,139 @@ export const TrustedBySection = () => {
           </motion.div>
         </div>
 
-        {/* Trust Stats */}
+        {/* Customer Testimonials Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 pt-12 border-t border-gray-100"
+          className="mt-24"
         >
-          <div className="text-center">
-            <div className="text-3xl font-light text-orange-500 mb-2">
-              5,000+
-            </div>
-            <div className="text-sm text-gray-500 uppercase tracking-wider">
-              Active Merchants
-            </div>
+          <div className="text-center mb-16">
+            <h3 className="text-3xl lg:text-4xl font-light text-black mb-4">
+              What Our{" "}
+              <span className="text-orange-500 font-normal">Clients Say</span>
+            </h3>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Hear from business leaders who trust GlobalPay to power their
+              payment infrastructure
+            </p>
           </div>
-          <div className="text-center">
-            <div className="text-3xl font-light text-green-600 mb-2">₦50B+</div>
-            <div className="text-sm text-gray-500 uppercase tracking-wider">
-              Transactions Processed
-            </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-all duration-300 relative"
+              >
+                {/* Quote Icon */}
+                <div className="absolute top-6 right-6">
+                  <Quote className="w-6 h-6 text-green-500 opacity-30" />
+                </div>
+
+                {/* Rating */}
+                <div className="flex items-center space-x-1 mb-4">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star
+                      key={i}
+                      className="w-4 h-4 fill-orange-500 text-orange-500"
+                    />
+                  ))}
+                </div>
+
+                {/* Testimonial Quote */}
+                <blockquote className="text-gray-700 leading-relaxed mb-6 italic">
+                  &#34;{testimonial.quote}&#34;
+                </blockquote>
+
+                {/* Author Info */}
+                <div className="flex items-center space-x-4">
+                  <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white font-medium">
+                    {testimonial.name
+                      .split(" ")
+                      .map((n) => n[0])
+                      .join("")}
+                  </div>
+                  <div>
+                    <h4 className="font-medium text-black">
+                      {testimonial.name}
+                    </h4>
+                    <p className="text-sm text-gray-600">
+                      {testimonial.position}
+                    </p>
+                    <p className="text-xs text-green-600 font-medium">
+                      {testimonial.company}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Industry Tag */}
+                <div className="mt-4 pt-4 border-t border-gray-200">
+                  <span className="inline-block px-3 py-1 bg-white text-gray-600 text-xs font-medium rounded-full border border-gray-200">
+                    {testimonial.industry}
+                  </span>
+                </div>
+              </motion.div>
+            ))}
           </div>
-          <div className="text-center">
-            <div className="text-3xl font-light text-orange-500 mb-2">200+</div>
-            <div className="text-sm text-gray-500 uppercase tracking-wider">
-              Locations Nationwide
+
+          {/* Customer Success Metrics */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="mt-16 bg-gradient-to-r from-green-50 to-orange-50 rounded-2xl p-12 border border-gray-100"
+          >
+            <div className="text-center mb-8">
+              <h4 className="text-2xl font-light text-black mb-2">
+                Customer{" "}
+                <span className="text-green-600 font-normal">Success</span>
+              </h4>
+              <p className="text-gray-600">
+                Our clients&#39; success is our success
+              </p>
             </div>
-          </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+              <div className="text-center">
+                <div className="text-2xl font-light text-green-600 mb-2">
+                  99.9%
+                </div>
+                <div className="text-sm text-gray-500 uppercase tracking-wider">
+                  Uptime Reliability
+                </div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-light text-orange-500 mb-2">
+                  4.9/5
+                </div>
+                <div className="text-sm text-gray-500 uppercase tracking-wider">
+                  Customer Rating
+                </div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-light text-green-600 mb-2">
+                  2 Mins
+                </div>
+                <div className="text-sm text-gray-500 uppercase tracking-wider">
+                  Avg Support Response
+                </div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-light text-orange-500 mb-2">
+                  98%
+                </div>
+                <div className="text-sm text-gray-500 uppercase tracking-wider">
+                  Client Retention Rate
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>
