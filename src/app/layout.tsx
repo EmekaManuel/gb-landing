@@ -31,14 +31,14 @@ export const metadata: Metadata = {
     siteName: "GlobalPay",
     images: [
       {
-        url: "/gb/og.png",
+        url: "https://res.cloudinary.com/dkngy4g5z/image/upload/t_opengraphs/v1749643296/Screenshot_2025-06-11_at_13.01.26_empmxk.png",
         width: 1200,
         height: 630,
         alt: "GlobalPay - Financial Inclusion for Everyone",
         type: "image/png",
       },
       {
-        url: "/gb/og.png",
+        url: "https://res.cloudinary.com/dkngy4g5z/image/upload/t_opengraphs/v1749643296/Screenshot_2025-06-11_at_13.01.26_empmxk.png",
         width: 1200,
         height: 1200,
         alt: "GlobalPay - Financial Inclusion for Everyone",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
       "More than a payment company. We believe everyone should be able to enjoy financial and social inclusion, without regard for physical borders, boundaries, or even social status.",
     images: [
       {
-        url: "/gb/og.png",
+        url: "https://res.cloudinary.com/dkngy4g5z/image/upload/t_opengraphs/v1749643296/Screenshot_2025-06-11_at_13.01.26_empmxk.png",
         width: 1200,
         height: 630,
         alt: "GlobalPay - Financial Inclusion for Everyone",
