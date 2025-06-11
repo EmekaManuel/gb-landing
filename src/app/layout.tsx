@@ -8,9 +8,6 @@ import { AuthProvider } from "@/providers/auth-provider";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import SocialWrapper from "@/layouts/app-layout";
 
-// import { I18nextProvider } from "react-i18next";
-// import i18n from "@/providers/i18n";
-
 const poppins = Poppins({
   weight: ["300", "400", "500", "600", "700"],
   subsets: ["latin"],
@@ -34,14 +31,14 @@ export const metadata: Metadata = {
     siteName: "GlobalPay",
     images: [
       {
-        url: "/gb/og.png", // Path to your image in the public folder
+        url: "/gb/og.png",
         width: 1200,
         height: 630,
         alt: "GlobalPay - Financial Inclusion for Everyone",
         type: "image/png",
       },
       {
-        url: "/gb/og.png", // Square version for some platforms
+        url: "/gb/og.png",
         width: 1200,
         height: 1200,
         alt: "GlobalPay - Financial Inclusion for Everyone",
@@ -56,7 +53,7 @@ export const metadata: Metadata = {
       "More than a payment company. We believe everyone should be able to enjoy financial and social inclusion, without regard for physical borders, boundaries, or even social status.",
     images: [
       {
-        url: "/gb/og.png", // Same image or Twitter-specific version
+        url: "/gb/og.png",
         width: 1200,
         height: 630,
         alt: "GlobalPay - Financial Inclusion for Everyone",
