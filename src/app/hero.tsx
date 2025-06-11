@@ -1,8 +1,14 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
+declare global {
+  interface Window {
+    VANTA: any;
+  }
+}
+
 import { motion } from "framer-motion";
-import { CreditCard, Mail, MapPin, Phone } from "lucide-react";
-import { Quote, Star } from "lucide-react";
+import { CreditCard, Mail, MapPin, Phone, Quote, Star } from "lucide-react";
 
 import Image from "next/image";
 import { useState } from "react";
@@ -19,166 +25,236 @@ import {
   Wallet,
 } from "lucide-react";
 
+import Script from "next/script";
+import { useEffect, useRef } from "react";
+
 export const HeroSection = () => {
+  const vantaRef = useRef<HTMLDivElement | null>(null);
+  const vantaEffect = useRef<{ destroy: () => void } | null>(null);
+
+  useEffect(() => {
+    // Initialize Vanta effect when scripts are loaded
+    const initVanta = () => {
+      if (typeof window !== "undefined" && window.VANTA && vantaRef.current) {
+        vantaEffect.current = window.VANTA.NET({
+          el: vantaRef.current,
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 200.0,
+          minWidth: 200.0,
+          scale: 1.0,
+          scaleMobile: 1.0,
+          color: 0x9315, // Green color to match your brand
+          backgroundColor: 0x0, // Black background
+          points: 20.0,
+          spacing: 20.0,
+          showDots: false,
+          opacity: 0.8,
+        });
+      }
+    };
+
+    // Check if scripts are already loaded
+    if (typeof window !== "undefined" && window.VANTA) {
+      initVanta();
+    } else {
+      // Wait for scripts to load
+      const checkVanta = setInterval(() => {
+        if (typeof window !== "undefined" && window.VANTA) {
+          initVanta();
+          clearInterval(checkVanta);
+        }
+      }, 100);
+
+      return () => clearInterval(checkVanta);
+    }
+
+    // Cleanup function
+    return () => {
+      if (vantaEffect.current) {
+        vantaEffect.current.destroy();
+      }
+    };
+  }, []);
+
   return (
-    <section className="min-h-screen bg-white flex flex-col justify-center px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto text-center space-y-16">
-        {/* Header Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="space-y-8"
-        >
-          {/* Brand */}
-          <div className="space-y-4">
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.2, duration: 0.6 }}
-              className="text-md uppercase tracking-[0.3em] text-green-600 font-medium"
-            >
-              GlobalPay
-            </motion.div>
+    <>
+      {/* Load Vanta.js scripts */}
+      <Script
+        src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"
+        strategy="beforeInteractive"
+      />
+      <Script
+        src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.24/vanta.net.min.js"
+        strategy="beforeInteractive"
+      />
 
-            {/* Main Headline */}
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.8 }}
-              className="text-4xl md:text-6xl lg:text-7xl font-light leading-[1.1] tracking-tight text-black"
-            >
-              Financial Inclusion
-              <br />
-              <span className="font-normal text-green-600">with Purpose</span>
-            </motion.h1>
-          </div>
+      <section
+        ref={vantaRef}
+        className="min-h-screen bg-black flex flex-col justify-center px-4 sm:px-6 lg:px-8 relative"
+      >
+        {/* Dark overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/30 z-10"></div>
 
-          {/* Description */}
+        <div className="max-w-4xl mx-auto text-center space-y-16 relative z-20">
+          {/* Header Section */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.8 }}
-            className="max-w-2xl mx-auto space-y-6"
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="space-y-8"
           >
-            <p className="text-lg md:text-xl text-gray-600 leading-relaxed font-light">
-              Transform your financial journey with GlobalPay&#39;s cutting-edge
-              payment solutions. We specialize in agency banking, digital
-              payments, and fintech services that drive financial inclusion
-              across Nigeria and beyond.
-            </p>
-
-            <p className="text-lg md:text-xl text-gray-600 leading-relaxed font-light">
-              Join thousands of satisfied customers who trust GlobalPay to
-              achieve their financial goals without barriers or boundaries.
-            </p>
-          </motion.div>
-        </motion.div>
-
-        {/* App Download Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8, duration: 0.8 }}
-          className="space-y-8"
-        >
-          <div className="text-sm uppercase tracking-[0.2em] text-gray-400 font-medium">
-            Download Our App
-          </div>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto">
-            <motion.button
-              className="group flex items-center justify-center border border-gray-200 text-black px-8 py-4 hover:bg-green-500 hover:text-white hover:border-green-500 transition-all duration-300"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <div className="flex items-center space-x-3">
-                <Smartphone className="w-5 h-5" />
-                <div className="text-left">
-                  <div className="text-xs text-gray-500 group-hover:text-gray-300">
-                    Download on the
-                  </div>
-                  <div className="text-sm font-medium">App Store</div>
-                </div>
-              </div>
-            </motion.button>
-
-            <motion.button
-              className="group flex items-center justify-center border border-gray-200 text-black px-8 py-4 hover:bg-green-500 hover:text-white hover:border-green-500 transition-all duration-300"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <div className="flex items-center space-x-3">
-                <Download className="w-5 h-5" />
-                <div className="text-left">
-                  <div className="text-xs text-gray-500 group-hover:text-gray-300">
-                    Get it on
-                  </div>
-                  <div className="text-sm font-medium">Google Play</div>
-                </div>
-              </div>
-            </motion.button>
-          </div>
-        </motion.div>
-
-        {/* CTA Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1, duration: 0.8 }}
-          className="space-y-8"
-        >
-          <motion.button
-            className="group bg-orange-500 text-white px-12 py-4 hover:bg-orange-600 transition-all duration-300 border-0"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-          >
-            <div className="flex items-center space-x-3">
-              <span className="text-lg font-normal">Become an Agent</span>
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-            </div>
-          </motion.button>
-        </motion.div>
-
-        {/* Stats Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.2, duration: 0.8 }}
-          className="pt-16 border-t border-gray-100"
-        >
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-3xl mx-auto">
-            {[
-              { value: "200+", label: "Locations Nationwide" },
-              { value: "₦2B+", label: "Transactions Processed" },
-              { value: "99%", label: "Customer Support" },
-            ].map((stat, index) => (
+            {/* Brand */}
+            <div className="space-y-4">
               <motion.div
-                key={index}
-                className="text-center space-y-2"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.4 + index * 0.1, duration: 0.6 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.2, duration: 0.6 }}
+                className="text-[18px] uppercase tracking-[0.3em] text-green-400 font-bold"
               >
-                <div className="text-3xl md:text-4xl font-light text-orange-500">
-                  {stat.value}
-                </div>
-                <div className="text-sm text-gray-500 uppercase tracking-wider font-medium">
-                  {stat.label}
-                </div>
+                GlobalPay
               </motion.div>
-            ))}
-          </div>
-        </motion.div>
 
-        <motion.div
-          initial={{ width: 0 }}
-          animate={{ width: "100px" }}
-          transition={{ delay: 1.8, duration: 1, ease: "easeOut" }}
-          className="h-px bg-green-400 mx-auto"
-        />
-      </div>
-    </section>
+              {/* Main Headline */}
+              <motion.h1
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4, duration: 0.8 }}
+                className="text-4xl md:text-6xl lg:text-7xl font-light leading-[1.1] tracking-tight text-white"
+              >
+                Financial Inclusion
+                <br />
+                <span className="font-normal text-green-400">with Purpose</span>
+              </motion.h1>
+            </div>
+
+            {/* Description */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6, duration: 0.8 }}
+              className="max-w-2xl mx-auto space-y-6"
+            >
+              <p className="text-lg md:text-xl text-gray-300 leading-relaxed font-light">
+                Transform your financial journey with GlobalPay&#39;s
+                cutting-edge payment solutions. We specialize in agency banking,
+                digital payments, and fintech services that drive financial
+                inclusion across Nigeria and beyond.
+              </p>
+
+              <p className="text-lg md:text-xl text-gray-300 leading-relaxed font-light">
+                Join thousands of satisfied customers who trust GlobalPay to
+                achieve their financial goals without barriers or boundaries.
+              </p>
+            </motion.div>
+          </motion.div>
+
+          {/* App Download Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8, duration: 0.8 }}
+            className="space-y-8"
+          >
+            <div className="text-sm uppercase tracking-[0.2em] text-gray-400 font-medium">
+              Download Our App
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto">
+              <motion.button
+                className="group flex items-center justify-center border border-gray-600 text-white px-8 py-4 hover:bg-green-500 hover:text-white hover:border-green-500 transition-all duration-300 backdrop-blur-sm bg-white/10"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <div className="flex items-center space-x-3">
+                  <Smartphone className="w-5 h-5" />
+                  <div className="text-left">
+                    <div className="text-xs text-gray-400 group-hover:text-gray-200">
+                      Download on the
+                    </div>
+                    <div className="text-sm font-medium">App Store</div>
+                  </div>
+                </div>
+              </motion.button>
+
+              <motion.button
+                className="group flex items-center justify-center border border-gray-600 text-white px-8 py-4 hover:bg-green-500 hover:text-white hover:border-green-500 transition-all duration-300 backdrop-blur-sm bg-white/10"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <div className="flex items-center space-x-3">
+                  <Download className="w-5 h-5" />
+                  <div className="text-left">
+                    <div className="text-xs text-gray-400 group-hover:text-gray-200">
+                      Get it on
+                    </div>
+                    <div className="text-sm font-medium">Google Play</div>
+                  </div>
+                </div>
+              </motion.button>
+            </div>
+          </motion.div>
+
+          {/* CTA Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1, duration: 0.8 }}
+            className="space-y-8"
+          >
+            <motion.button
+              className="group bg-orange-500 text-white px-12 py-4 hover:bg-orange-600 transition-all duration-300 border-0 shadow-lg"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <div className="flex items-center space-x-3">
+                <span className="text-lg font-normal">Become an Agent</span>
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+              </div>
+            </motion.button>
+          </motion.div>
+
+          {/* Stats Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.2, duration: 0.8 }}
+            className="pt-16 border-t border-gray-700"
+          >
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-3xl mx-auto">
+              {[
+                { value: "200+", label: "Locations Nationwide" },
+                { value: "₦2B+", label: "Transactions Processed" },
+                { value: "99%", label: "Customer Support" },
+              ].map((stat, index) => (
+                <motion.div
+                  key={index}
+                  className="text-center space-y-2"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1.4 + index * 0.1, duration: 0.6 }}
+                >
+                  <div className="text-3xl md:text-4xl font-light text-orange-500">
+                    {stat.value}
+                  </div>
+                  <div className="text-sm text-gray-400 uppercase tracking-wider font-medium">
+                    {stat.label}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ width: 0 }}
+            animate={{ width: "100px" }}
+            transition={{ delay: 1.8, duration: 1, ease: "easeOut" }}
+            className="h-px bg-green-400 mx-auto"
+          />
+        </div>
+      </section>
+    </>
   );
 };
 
@@ -799,7 +875,7 @@ export const WhatWeDoSection = () => {
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-gray-50 rounded-lg p-4">
                     <div className="text-2xl font-light text-black mb-1">
-                      ₦2.4M
+                      ₦16.4M
                     </div>
                     <div className="text-xs text-gray-500 uppercase tracking-wider">
                       Today&#39;s Volume
@@ -807,7 +883,7 @@ export const WhatWeDoSection = () => {
                   </div>
                   <div className="bg-gray-50 rounded-lg p-4">
                     <div className="text-2xl font-light text-green-600 mb-1">
-                      1,247
+                      2,860
                     </div>
                     <div className="text-xs text-gray-500 uppercase tracking-wider">
                       Transactions
