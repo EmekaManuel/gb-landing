@@ -25,75 +25,29 @@ import {
   Wallet,
 } from "lucide-react";
 
-import Script from "next/script";
-import { useEffect, useRef } from "react";
-
 export const HeroSection = () => {
-  const vantaRef = useRef<HTMLDivElement | null>(null);
-  const vantaEffect = useRef<{ destroy: () => void } | null>(null);
-
-  useEffect(() => {
-    const initVanta = () => {
-      if (typeof window !== "undefined" && window.VANTA && vantaRef.current) {
-        vantaEffect.current = window.VANTA.NET({
-          el: vantaRef.current,
-          mouseControls: true,
-          touchControls: true,
-          gyroControls: false,
-          minHeight: 200.0,
-          minWidth: 200.0,
-          scale: 1.0,
-          scaleMobile: 1.0,
-          color: 0x9315, // Green color to match your brand
-          backgroundColor: 0x0, // Black background
-          points: 20.0,
-          spacing: 20.0,
-          showDots: false,
-          opacity: 0.8,
-        });
-      }
-    };
-
-    // Check if scripts are already loaded
-    if (typeof window !== "undefined" && window.VANTA) {
-      initVanta();
-    } else {
-      // Wait for scripts to load
-      const checkVanta = setInterval(() => {
-        if (typeof window !== "undefined" && window.VANTA) {
-          initVanta();
-          clearInterval(checkVanta);
-        }
-      }, 100);
-
-      return () => clearInterval(checkVanta);
-    }
-
-    return () => {
-      if (vantaEffect.current) {
-        vantaEffect.current.destroy();
-      }
-    };
-  }, []);
-
   return (
     <>
-      {/* Load Vanta.js scripts */}
-      <Script
-        src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"
-        strategy="beforeInteractive"
-      />
-      <Script
-        src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.24/vanta.net.min.js"
-        strategy="beforeInteractive"
-      />
+      <section className="min-h-screen pt-6 bg-black flex flex-col justify-center px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        {/* Background Image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: "url('/hero/lagos-1.jpg')",
+          }}
+        />
 
-      <section
-        ref={vantaRef}
-        className="min-h-screen pt-6 bg-black flex flex-col justify-center px-4 sm:px-6 lg:px-8 relative"
-      >
+        <Image
+          src="/hero/lagos-4.jpg"
+          alt="Background"
+          fill
+          className="object-cover"
+          priority
+          quality={85}
+        />
+
         {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/30 z-10"></div>
+        <div className="absolute inset-0 bg-black/60 z-10"></div>
 
         <div className="max-w-4xl mx-auto text-center space-y-16 relative z-20">
           {/* Header Section */}
@@ -166,7 +120,12 @@ export const HeroSection = () => {
                 whileTap={{ scale: 0.98 }}
               >
                 <div className="flex items-center space-x-3">
-                  <Smartphone className="w-5 h-5" />
+                  <Image
+                    src="/logos/app-store-logo.png"
+                    alt="Download on the App Store"
+                    height={25}
+                    width={25}
+                  />
                   <div className="text-left">
                     <div className="text-xs text-gray-400 group-hover:text-gray-200">
                       Download on the
@@ -182,7 +141,12 @@ export const HeroSection = () => {
                 whileTap={{ scale: 0.98 }}
               >
                 <div className="flex items-center space-x-3">
-                  <Download className="w-5 h-5" />
+                  <Image
+                    src="/logos/google-play-logo.png"
+                    alt="Download on the App Store"
+                    height={25}
+                    width={25}
+                  />{" "}
                   <div className="text-left">
                     <div className="text-xs text-gray-400 group-hover:text-gray-200">
                       Get it on
