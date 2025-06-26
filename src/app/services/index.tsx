@@ -1,18 +1,22 @@
 "use client";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import {
   ArrowRight,
   CheckCircle,
   Code,
   CreditCard,
+  Mail,
+  MessageCircle,
+  Minus,
   Monitor,
-  Smartphone,
+  Phone,
+  Plus,
+  Search,
+  Store,
   Users,
   Wallet,
 } from "lucide-react";
 import { useState } from "react";
-import { AnimatePresence } from "framer-motion";
-import { Mail, MessageCircle, Minus, Phone, Plus, Search } from "lucide-react";
 
 export const GlobalPayServicesSection = () => {
   const [selectedService, setSelectedService] = useState<number | null>(null);
@@ -32,15 +36,15 @@ export const GlobalPayServicesSection = () => {
       bgColor: "bg-green-500",
     },
     {
-      icon: <Smartphone className="w-6 h-6 text-white" />,
-      title: "Mobile Banking",
+      icon: <Store className="w-6 h-6 text-white" />,
+      title: "Merchant Services",
       description:
-        "Complete mobile banking solutions that bring financial services directly to your customers' fingertips.",
+        "Comprehensive business solutions designed to help merchants grow, manage operations, and optimize customer experiences.",
       features: [
-        "User-friendly mobile apps",
-        "Instant money transfers",
-        "Bill payment services",
-        "Account management tools",
+        "Business analytics and insights",
+        "Customer relationship management",
+        "Loyalty program integration",
+        "Multi-location management tools",
       ],
       bgColor: "bg-orange-500",
     },

@@ -8,7 +8,15 @@ declare global {
 }
 
 import { motion } from "framer-motion";
-import { CreditCard, Mail, MapPin, Phone, Quote, Star } from "lucide-react";
+import {
+  CreditCard,
+  Mail,
+  MapPin,
+  Phone,
+  Quote,
+  Star,
+  Store,
+} from "lucide-react";
 
 import Image from "next/image";
 import { useState } from "react";
@@ -706,22 +714,29 @@ export const WhatWeDoSection = () => {
         "Secure, reliable payment processing for businesses of all sizes with real-time transaction support.",
     },
     {
+      icon: <Store className="w-6 h-6" />,
+      title: "Merchant Services",
+      description:
+        "Comprehensive merchant solutions including POS systems, merchant management, and business analytics for retail success.",
+    },
+    {
       icon: <Smartphone className="w-6 h-6" />,
       title: "Mobile Banking",
       description:
         "Complete mobile banking solutions bringing financial services directly to your customers.",
+    },
+
+    {
+      icon: <Code className="w-6 h-6" />,
+      title: "API Integration",
+      description:
+        "Powerful APIs for seamless integration of payment services into existing business systems.",
     },
     {
       icon: <Users className="w-6 h-6" />,
       title: "Agent Banking",
       description:
         "Expand your reach through our extensive agent network across Nigeria and Africa.",
-    },
-    {
-      icon: <Code className="w-6 h-6" />,
-      title: "API Integration",
-      description:
-        "Powerful APIs for seamless integration of payment services into existing business systems.",
     },
   ];
 
@@ -857,7 +872,7 @@ export const WhatWeDoSection = () => {
                 <div className="space-y-4">
                   <div>
                     <div className="flex justify-between text-sm mb-2">
-                      <span className="text-gray-600">Mobile Payments</span>
+                      <span className="text-gray-600">Card Transactions</span>
                       <span className="text-green-600">85%</span>
                     </div>
                     <div className="w-full bg-gray-200 rounded-full h-2">
@@ -869,7 +884,9 @@ export const WhatWeDoSection = () => {
                   </div>
                   <div>
                     <div className="flex justify-between text-sm mb-2">
-                      <span className="text-gray-600">Card Payments</span>
+                      <span className="text-gray-600">
+                        Pay By Transfer Transactions
+                      </span>
                       <span className="text-orange-500">65%</span>
                     </div>
                     <div className="w-full bg-gray-200 rounded-full h-2">
@@ -920,7 +937,7 @@ export const EventsNewsletterSection = () => {
     ],
     Services: [
       { name: "Payment Processing", href: "/services/payment-processing" },
-      { name: "Mobile Banking", href: "/services/mobile-banking" },
+      { name: "Merchant Services", href: "/services/mobile-banking" },
       { name: "Agent Banking", href: "/services/agent-banking" },
       { name: "POS Terminals", href: "/services/pos-terminals" },
       { name: "API Integration", href: "/services/api" },

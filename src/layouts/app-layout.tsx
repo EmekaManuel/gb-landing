@@ -27,12 +27,12 @@ const SocialWrapper: React.FC<SocialWrapperProps> = ({
   showLinkedin = false,
   showGithub = false,
   showEmail = true,
-  facebookUrl = "https://facebook.com",
-  twitterUrl = "https://twitter.com",
-  instagramUrl = "https://instagram.com",
+  facebookUrl = "https://web.facebook.com/myglobalpay",
+  twitterUrl = "https://x.com/globalpayng",
+  instagramUrl = "https://www.instagram.com/globalpayng",
   linkedinUrl = "https://linkedin.com",
   githubUrl = "https://github.com",
-  emailAddress = "hello@example.com",
+  emailAddress = "helpdesk@globalpayng.com",
 }) => {
   const socialLinks = [
     {
