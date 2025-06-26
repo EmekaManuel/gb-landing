@@ -18,16 +18,16 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "GlobalPay - Nigeria's Leading Fintech & Payment Solutions",
   description:
-    "Join 5,000+ merchants using GlobalPay for agency banking, POS terminals, and digital payments. Start earning with our agent network across 200+ locations in Nigeria.",
+    "Join 5,000+ merchants using GlobalPay for merchant services, POS terminals, and digital payments. Start earning with our agent network across 200+ locations in Nigeria.",
   alternates: {
-    canonical: "https://globalpay.ng", // Use your actual domain
+    canonical: "https://globalpay.ng",
   },
   metadataBase: new URL("https://globalpay.ng"), // Required for absolute URLs
   openGraph: {
     url: "https://globalpay.ng",
     title: "GlobalPay - Nigeria's Leading Fintech & Payment Solutions",
     description:
-      "Join 5,000+ merchants using GlobalPay for agency banking, POS terminals, and digital payments. Start earning with our agent network across 200+ locations.",
+      "Join 5,000+ merchants using GlobalPay for merchant services POS terminals, and digital payments. Start earning with our agent network across 200+ locations.",
     type: "website",
     siteName: "GlobalPay",
     locale: "en_NG", // Nigeria English
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
         url: "https://res.cloudinary.com/dkngy4g5z/image/upload/t_opengraphs/v1749643296/Screenshot_2025-06-11_at_13.01.26_empmxk.png",
         width: 1200,
         height: 630,
-        alt: "GlobalPay - Nigeria's leading fintech platform for digital payments and agency banking",
+        alt: "GlobalPay - Nigeria's leading fintech platform for digital payments and merchant services",
         type: "image/png",
       },
       {
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     creator: "@GlobalPayNG",
     title: "GlobalPay - Nigeria's Leading Fintech & Payment Solutions",
     description:
-      "Join 5,000+ merchants using GlobalPay for agency banking, POS terminals, and digital payments. Start earning with our agent network.",
+      "Join 5,000+ merchants using GlobalPay for merchant services, POS terminals, and digital payments. Start earning with our agent network.",
     images: [
       {
         url: "https://res.cloudinary.com/dkngy4g5z/image/upload/t_opengraphs/v1749643296/Screenshot_2025-06-11_at_13.01.26_empmxk.png",
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     "globalpay nigeria",
     "fintech nigeria",
     "payment solutions nigeria",
-    "agency banking nigeria",
+    "merchant services nigeria",
     "pos terminals lagos",
 
     // Secondary keywords
