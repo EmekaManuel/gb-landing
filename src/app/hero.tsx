@@ -32,6 +32,7 @@ import {
   Users,
   Wallet,
 } from "lucide-react";
+import AppLogo from "@/components/appLogo";
 
 export const HeroSection = () => {
   return (
@@ -71,9 +72,9 @@ export const HeroSection = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.2, duration: 0.6 }}
-                className="text-[18px] uppercase tracking-[0.3em] text-green-400 font-bold"
+                className="text-[18px]  tracking-[0.3em] text-green-400 font-bold"
               >
-                GlobalPay
+                globalpay
               </motion.div>
 
               {/* Main Headline */}
@@ -959,14 +960,7 @@ export const EventsNewsletterSection = () => {
           <div className="lg:col-span-4 space-y-6">
             <div>
               <div className="text-2xl font-light flex gap-2 text-white mb-4">
-                <Image
-                  className="w-8 ltr:-ml-1 rtl:-mr-1 inline"
-                  src="/gb/logo.png"
-                  width={8}
-                  height={8}
-                  alt="logo"
-                />
-                <span className="text-white-500">globalpay</span>
+                <AppLogo />
               </div>
               <p className="text-gray-300 leading-relaxed max-w-sm">
                 Making financial services accessible to everyone across Africa
