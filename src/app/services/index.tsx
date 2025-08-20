@@ -18,7 +18,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 
-export const GlobalPayServicesSection = () => {
+export const GlobalpayServicesSection = () => {
   const [selectedService, setSelectedService] = useState<number | null>(null);
 
   const services = [
@@ -226,7 +226,7 @@ export const GlobalPayServicesSection = () => {
             </h3>
 
             <p className="text-lg text-gray-600 leading-relaxed">
-              Join thousands of businesses that trust GlobalPay for their
+              Join thousands of businesses that trust globalpay for their
               financial technology needs. Get started today and experience the
               future of digital payments.
             </p>
@@ -295,9 +295,9 @@ export const FAQSection = () => {
   const faqData = [
     {
       id: 1,
-      question: "How do I set up a Globalpay merchant account?",
+      question: "How do I set up a globalpay merchant account?",
       answer:
-        "Setting up a Globalpay merchant account is simple. Visit our registration page, fill out the application form, submit the required documentation, and our team will review your application. Once approved, you'll receive your login credentials and can start accepting payments immediately.",
+        "Setting up a globalpay merchant account is simple. Visit our registration page, fill out the application form, submit the required documentation, and our team will review your application. Once approved, you'll receive your login credentials and can start accepting payments immediately.",
       category: "Getting Started",
     },
     {
@@ -337,16 +337,16 @@ export const FAQSection = () => {
     },
     {
       id: 7,
-      question: "How much does it cost to become a Globalpay agent?",
+      question: "How much does it cost to become a globalpay agent?",
       answer:
-        "The cost to become a Globalpay agent varies based on the package you select. Our basic package starts at ₦50,000, which includes your POS terminal, initial training, and account setup. We also offer premium packages with additional features and benefits. Contact our sales team for current pricing and promotions.",
+        "The cost to become a globalpay agent varies based on the package you select. Our basic package starts at ₦50,000, which includes your POS terminal, initial training, and account setup. We also offer premium packages with additional features and benefits. Contact our sales team for current pricing and promotions.",
       category: "Agent Banking",
     },
     {
       id: 8,
       question: "How fast can I get paid?",
       answer:
-        "Globalpay offers same-day settlements for transactions completed before 3 PM on business days. Transactions after this time or on weekends/holidays are settled on the next business day. Super Agents and premium merchants may qualify for instant settlements. Your settlement timeframe is specified in your merchant agreement.",
+        "globalpay offers same-day settlements for transactions completed before 3 PM on business days. Transactions after this time or on weekends/holidays are settled on the next business day. Super Agents and premium merchants may qualify for instant settlements. Your settlement timeframe is specified in your merchant agreement.",
       category: "Payments",
     },
     {
@@ -358,7 +358,7 @@ export const FAQSection = () => {
     },
     {
       id: 10,
-      question: "How fast can I get a Globalpay POS device?",
+      question: "How fast can I get a globalpay POS device?",
       answer:
         "After your application is approved, POS devices are typically delivered within 2-3 business days in major cities, and 3-5 business days in other locations. Express delivery options are available for an additional fee. You can track your device delivery through our agent portal.",
       category: "Equipment",
@@ -407,7 +407,7 @@ export const FAQSection = () => {
           </h2>
 
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Find quick answers to common questions about GlobalPay services,
+            Find quick answers to common questions about globalpay services,
             account setup, and getting started with our platform.
           </p>
         </motion.div>

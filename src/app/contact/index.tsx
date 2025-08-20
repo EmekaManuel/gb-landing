@@ -46,7 +46,7 @@ export const ContactSection = () => {
             </h1>
 
             <p className="text-lg text-gray-600 leading-relaxed">
-              Our dedicated team is ready to help you discover how GlobalPay can
+              Our dedicated team is ready to help you discover how globalpay can
               transform your financial operations and drive business growth.
             </p>
 
@@ -226,7 +226,7 @@ export const ContactForm = () => {
               Message Sent Successfully!
             </h2>
             <p className="text-gray-600 mb-8">
-              Thank you for contacting GlobalPay. Our team will review your
+              Thank you for contacting globalpay. Our team will review your
               message and respond within 24 hours.
             </p>
             <button

@@ -105,7 +105,7 @@ export const GetStartedPage = () => {
             </div>
 
             <h1 className="text-4xl lg:text-5xl xl:text-6xl font-light leading-tight text-black">
-              Become a GlobalPay
+              Become a globalpay
               <br />
               <span className="text-green-600 font-normal">Agent Today</span>
             </h1>
@@ -146,7 +146,7 @@ export const GetStartedPage = () => {
               <span className="text-green-600 font-normal">Agent?</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Discover the benefits of partnering with GlobalPay and building a
+              Discover the benefits of partnering with globalpay and building a
               successful financial services business.
             </p>
           </motion.div>
@@ -195,7 +195,7 @@ export const GetStartedPage = () => {
               <span className="text-orange-500 font-normal">Get Started</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Follow these simple steps to become a GlobalPay agent and start
+              Follow these simple steps to become a globalpay agent and start
               your journey to financial success.
             </p>
           </motion.div>
@@ -260,7 +260,7 @@ export const GetStartedPage = () => {
             </h2>
 
             <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-              Join the GlobalPay agent network today and unlock unlimited
+              Join the globalpay agent network today and unlock unlimited
               earning potential while serving your community with essential
               financial services.
             </p>

@@ -1,5 +1,5 @@
 import React from "react";
-import { FAQSection, GlobalPayServicesSection } from ".";
+import { FAQSection, GlobalpayServicesSection } from ".";
 import Navigation from "@/components/inavbar";
 import { EventsNewsletterSection } from "../hero";
 
@@ -7,7 +7,7 @@ const page = () => {
   return (
     <>
       <Navigation />
-      <GlobalPayServicesSection />
+      <GlobalpayServicesSection />
       <FAQSection />
       <EventsNewsletterSection />
     </>

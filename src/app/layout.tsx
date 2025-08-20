@@ -16,51 +16,51 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "GlobalPay - Nigeria's Leading Fintech & Payment Solutions",
+  title: "globalpay - Nigeria's Leading Fintech & Payment Solutions",
   description:
-    "Join 5,000+ merchants using GlobalPay for merchant services, POS terminals, and digital payments. Start earning with our agent network across 200+ locations in Nigeria.",
+    "Join 5,000+ merchants using globalpay for merchant services, POS terminals, and digital payments. Start earning with our agent network across 200+ locations in Nigeria.",
   alternates: {
     canonical: "https://globalpay.ng",
   },
   metadataBase: new URL("https://globalpay.ng"), // Required for absolute URLs
   openGraph: {
     url: "https://globalpay.ng",
-    title: "GlobalPay - Nigeria's Leading Fintech & Payment Solutions",
+    title: "globalpay - Nigeria's Leading Fintech & Payment Solutions",
     description:
-      "Join 5,000+ merchants using GlobalPay for merchant services POS terminals, and digital payments. Start earning with our agent network across 200+ locations.",
+      "Join 5,000+ merchants using globalpay for merchant services POS terminals, and digital payments. Start earning with our agent network across 200+ locations.",
     type: "website",
-    siteName: "GlobalPay",
+    siteName: "globalpay",
     locale: "en_NG", // Nigeria English
     images: [
       {
         url: "https://res.cloudinary.com/dkngy4g5z/image/upload/t_opengraphs/v1749643296/Screenshot_2025-06-11_at_13.01.26_empmxk.png",
         width: 1200,
         height: 630,
-        alt: "GlobalPay - Nigeria's leading fintech platform for digital payments and merchant services",
+        alt: "globalpay - Nigeria's leading fintech platform for digital payments and merchant services",
         type: "image/png",
       },
       {
         url: "https://res.cloudinary.com/dkngy4g5z/image/upload/c_fill,w_1200,h_1200/v1749643296/Screenshot_2025-06-11_at_13.01.26_empmxk.png", // Square crop
         width: 1200,
         height: 1200,
-        alt: "GlobalPay - Nigeria's leading fintech platform",
+        alt: "globalpay - Nigeria's leading fintech platform",
         type: "image/png",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    site: "@GlobalPayNG", // Add your Twitter handle
-    creator: "@GlobalPayNG",
-    title: "GlobalPay - Nigeria's Leading Fintech & Payment Solutions",
+    site: "@globalpayNG", // Add your Twitter handle
+    creator: "@globalpayNG",
+    title: "globalpay - Nigeria's Leading Fintech & Payment Solutions",
     description:
-      "Join 5,000+ merchants using GlobalPay for merchant services, POS terminals, and digital payments. Start earning with our agent network.",
+      "Join 5,000+ merchants using globalpay for merchant services, POS terminals, and digital payments. Start earning with our agent network.",
     images: [
       {
         url: "https://res.cloudinary.com/dkngy4g5z/image/upload/t_opengraphs/v1749643296/Screenshot_2025-06-11_at_13.01.26_empmxk.png",
         width: 1200,
         height: 630,
-        alt: "GlobalPay - Nigeria's leading fintech platform for digital payments",
+        alt: "globalpay - Nigeria's leading fintech platform for digital payments",
       },
     ],
   },
@@ -85,9 +85,9 @@ export const metadata: Metadata = {
     "instant settlement nigeria",
     "reliable payment processor",
   ],
-  authors: [{ name: "GlobalPay Nigeria", url: "https://globalpay.ng" }],
-  creator: "GlobalPay Nigeria",
-  publisher: "GlobalPay Nigeria",
+  authors: [{ name: "globalpay Nigeria", url: "https://globalpay.ng" }],
+  creator: "globalpay Nigeria",
+  publisher: "globalpay Nigeria",
   category: "Financial Technology",
   classification: "Business",
   robots: {

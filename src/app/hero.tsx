@@ -98,14 +98,14 @@ export const HeroSection = () => {
               className="max-w-2xl mx-auto space-y-6"
             >
               <p className="text-lg md:text-xl text-gray-300 leading-relaxed font-light">
-                Transform your financial journey with GlobalPay&#39;s
+                Transform your financial journey with globalpay&#39;s
                 cutting-edge payment solutions. We specialize in agency banking,
                 digital payments, and fintech services that drive financial
                 inclusion across Nigeria and beyond.
               </p>
 
               <p className="text-lg md:text-xl text-gray-300 leading-relaxed font-light">
-                Join thousands of satisfied customers who trust GlobalPay to
+                Join thousands of satisfied customers who trust globalpay to
                 achieve their financial goals without barriers or boundaries.
               </p>
             </motion.div>
@@ -281,7 +281,7 @@ export const AboutUsSection = () => {
             >
               <div className="w-12 h-0.5 bg-green-500"></div>
               <span className="text-sm font-medium text-gray-500 uppercase tracking-wider">
-                About GlobalPay
+                About globalpay
               </span>
             </motion.div>
 
@@ -307,7 +307,7 @@ export const AboutUsSection = () => {
               className="space-y-6"
             >
               <p className="text-lg text-gray-600 leading-relaxed">
-                GlobalPay is more than a payment company. We&#39;re building the
+                globalpay is more than a payment company. We&#39;re building the
                 infrastructure that enables financial inclusion across Africa,
                 ensuring everyone can participate in the digital economy
                 regardless of their location or background.
@@ -485,7 +485,7 @@ export const TrustedBySection = () => {
       image: "/gb/testimonials/sarah.jpg",
       rating: 5,
       quote:
-        "GlobalPay has revolutionized our payment processing across all locations. The seamless integration and reliable settlements have significantly improved our cash flow management.",
+        "globalpay has revolutionized our payment processing across all locations. The seamless integration and reliable settlements have significantly improved our cash flow management.",
       industry: "Food & Beverage",
     },
 
@@ -496,7 +496,7 @@ export const TrustedBySection = () => {
       image: "/gb/testimonials/aisha.jpg",
       rating: 5,
       quote:
-        "As a financial institution, we needed a reliable partner for our agent banking network. GlobalPay's infrastructure and support have exceeded our expectations.",
+        "As a financial institution, we needed a reliable partner for our agent banking network. globalpay's infrastructure and support have exceeded our expectations.",
       industry: "Banking",
     },
 
@@ -507,7 +507,7 @@ export const TrustedBySection = () => {
       image: "/gb/testimonials/emeka.jpg",
       rating: 5,
       quote:
-        "Handling high-volume transactions across our network requires reliability. GlobalPay delivers consistent performance and exceptional uptime for our fuel stations.",
+        "Handling high-volume transactions across our network requires reliability. globalpay delivers consistent performance and exceptional uptime for our fuel stations.",
       industry: "Energy",
     },
   ];
@@ -581,7 +581,7 @@ export const TrustedBySection = () => {
               <span className="text-orange-500 font-normal">Clients Say</span>
             </h3>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Hear from business leaders who trust GlobalPay to power their
+              Hear from business leaders who trust globalpay to power their
               payment infrastructure
             </p>
           </div>
@@ -1091,7 +1091,7 @@ export const EventsNewsletterSection = () => {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             {/* Copyright */}
             <div className="text-sm text-gray-400">
-              © 2025 Globalpay. All rights reserved.
+              © 2025 globalpay. All rights reserved.
             </div>
 
             {/* Legal Links */}
