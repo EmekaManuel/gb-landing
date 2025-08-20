@@ -1,13 +1,13 @@
 import React from "react";
 import Navigation from "@/components/inavbar";
+import { TermsOfServiceSection } from ".";
 import { EventsNewsletterSection } from "../hero";
-import { PrivacyPolicySection } from ".";
 
 const page = () => {
   return (
     <>
       <Navigation />
-      <PrivacyPolicySection />
+      <TermsOfServiceSection />
       <EventsNewsletterSection />
     </>
   );
