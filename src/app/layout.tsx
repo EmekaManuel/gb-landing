@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import QueryProvider from "@/providers/query-provider";
 import "./globals.css";
 import { Poppins } from "next/font/google";
 
 import { ThemeProvider } from "@/providers/theme-provider";
-import { AuthProvider } from "@/providers/auth-provider";
+import { CookieProvider } from "@/providers/cookie-provider";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import SocialWrapper from "@/layouts/app-layout";
 
@@ -138,14 +137,12 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning className={poppins.variable}>
       <body>
         <SpeedInsights />
-        <QueryProvider>
-          {/* removed enableSystem */}
-          <ThemeProvider attribute="class" defaultTheme="light">
-            <AuthProvider>
-              <SocialWrapper>{children}</SocialWrapper>
-            </AuthProvider>
-          </ThemeProvider>
-        </QueryProvider>
+        {/* removed enableSystem */}
+        <ThemeProvider attribute="class" defaultTheme="light">
+          <CookieProvider>
+            <SocialWrapper>{children}</SocialWrapper>
+          </CookieProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

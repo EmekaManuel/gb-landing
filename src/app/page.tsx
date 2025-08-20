@@ -15,7 +15,6 @@ export default function Home() {
       <AboutUsSection />
       <TrustedBySection />
       <WhatWeDoSection />
-
       <EventsNewsletterSection />
     </>
   );
