@@ -12,6 +12,7 @@ const Navigation = () => {
     { name: "Home", href: "/" },
     { name: "What We Do", href: "/services" },
     { name: "Contact", href: "/contact" },
+    { name: "Get Started", href: "/get-started" },
   ];
 
   // Close mobile menu on window resize
@@ -62,10 +63,12 @@ const Navigation = () => {
 
                 {/* Donate Button */}
                 <a
-                  href="/get-started"
+                  href="https://app.globalpayweb.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-gray-900 text-white px-6 py-2 rounded-md text-sm font-medium hover:bg-gray-800 transition-colors duration-200"
                 >
-                  Get Started
+                  Login{" "}
                 </a>
               </div>
             </div>
@@ -117,10 +120,11 @@ const Navigation = () => {
                 </a>
               ))}
 
-              {/* Mobile Donate Button */}
               <div className="pt-4 pb-2">
                 <a
-                  href="/get-started"
+                  href="https://app.globalpayweb.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={`bg-gray-900 text-white block text-center px-6 py-3 rounded-md text-base font-medium mx-3 hover:bg-gray-800 transition-all duration-200 shadow-md transform ${
                     isOpen
                       ? "translate-x-0 opacity-100"
@@ -131,7 +135,7 @@ const Navigation = () => {
                   }}
                   onClick={() => setIsOpen(false)}
                 >
-                  Get Started
+                  Login{" "}
                 </a>
               </div>
             </div>

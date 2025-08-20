@@ -42,12 +42,12 @@ export const HeroSection = () => {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('/hero/lagos-1.jpg')",
+            backgroundImage: "url('/hero/home.jpg')",
           }}
         />
 
         <Image
-          src="/hero/lagos-4.jpg"
+          src="/hero/home.jpg"
           alt="Background"
           fill
           className="object-cover"
@@ -123,7 +123,10 @@ export const HeroSection = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto">
-              <motion.button
+              <motion.a
+                href="https://apps.apple.com/us/developer/global-pay-limited/id1736547267"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group flex items-center justify-center border border-gray-600 text-white px-8 py-4 hover:bg-green-500 hover:text-white hover:border-green-500 transition-all duration-300 backdrop-blur-sm bg-white/10"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
@@ -142,9 +145,12 @@ export const HeroSection = () => {
                     <div className="text-sm font-medium">App Store</div>
                   </div>
                 </div>
-              </motion.button>
+              </motion.a>
 
-              <motion.button
+              <motion.a
+                href="https://play.google.com/store/apps/details?id=com.globalpay.globalpay&pcampaignid=web_share"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group flex items-center justify-center border border-gray-600 text-white px-8 py-4 hover:bg-green-500 hover:text-white hover:border-green-500 transition-all duration-300 backdrop-blur-sm bg-white/10"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
@@ -152,7 +158,7 @@ export const HeroSection = () => {
                 <div className="flex items-center space-x-3">
                   <Image
                     src="/logos/google-play-logo.png"
-                    alt="Download on the App Store"
+                    alt="Download on Google Play"
                     height={25}
                     width={25}
                   />{" "}
@@ -163,7 +169,7 @@ export const HeroSection = () => {
                     <div className="text-sm font-medium">Google Play</div>
                   </div>
                 </div>
-              </motion.button>
+              </motion.a>
             </div>
           </motion.div>
 
@@ -974,7 +980,12 @@ export const EventsNewsletterSection = () => {
                 Download Our App
               </h4>
               <div className="flex flex-col sm:flex-row gap-3">
-                <button className="flex items-center justify-center border border-gray-700 px-4 py-2 hover:border-green-500 hover:bg-green-500/10 transition-all duration-300 group">
+                <a
+                  href="https://apps.apple.com/us/developer/global-pay-limited/id1736547267"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center border border-gray-700 px-4 py-2 hover:border-green-500 hover:bg-green-500/10 transition-all duration-300 group"
+                >
                   <div className="flex items-center space-x-2">
                     <Smartphone className="w-4 h-4 text-gray-400 group-hover:text-green-500" />
                     <div className="text-left">
@@ -986,9 +997,14 @@ export const EventsNewsletterSection = () => {
                       </div>
                     </div>
                   </div>
-                </button>
+                </a>
 
-                <button className="flex items-center justify-center border border-gray-700 px-4 py-2 hover:border-green-500 hover:bg-green-500/10 transition-all duration-300 group">
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.globalpay.globalpay&pcampaignid=web_share"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center border border-gray-700 px-4 py-2 hover:border-green-500 hover:bg-green-500/10 transition-all duration-300 group"
+                >
                   <div className="flex items-center space-x-2">
                     <Download className="w-4 h-4 text-gray-400 group-hover:text-green-500" />
                     <div className="text-left">
@@ -998,7 +1014,7 @@ export const EventsNewsletterSection = () => {
                       </div>
                     </div>
                   </div>
-                </button>
+                </a>
               </div>
             </div>
           </div>
