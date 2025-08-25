@@ -1,20 +1,5 @@
 "use client";
 
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import {
-  Facebook,
-  Linkedin,
-  Mail,
-  Phone,
-  Clock,
-  Instagram,
-  MapPin,
-  CheckCircle,
-  Send,
-  Twitter,
-} from "lucide-react";
-import { useState } from "react";
-
 import { motion } from "framer-motion"; 
 import { Shield } from "lucide-react";
 import { Lock } from "lucide-react";
